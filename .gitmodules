@@ -1,0 +1,3 @@
+[submodule "mahout"]
+	path = mahout
+	url = https://github.com/Altiscale/mahout.git
