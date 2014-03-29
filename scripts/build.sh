@@ -60,7 +60,7 @@ cp "$mahout_spec" $WORKSPACE/rpmbuild/SPECS/mahout.spec
 cp -r $WORKSPACE/mahout $WORKSPACE/rpmbuild/SOURCES/
 cp $WORKSPACE/patches/* $WORKSPACE/rpmbuild/SOURCES/
 # SCALA_HOME=$SCALA_HOME rpmbuild -vv -ba $WORKSPACE/rpmbuild/SPECS/mahout.spec --define "_topdir $WORKSPACE/rpmbuild" --rcfile=$mahout_rc_macros --buildroot $WORKSPACE/rpmbuild/BUILDROOT/
-# rpmbuild -vv -ba $WORKSPACE/rpmbuild/SPECS/mahout.spec --define "_topdir $WORKSPACE/rpmbuild" --buildroot $WORKSPACE/rpmbuild/BUILDROOT/
+rpmbuild -vv -ba $WORKSPACE/rpmbuild/SPECS/mahout.spec --define "_topdir $WORKSPACE/rpmbuild" --buildroot $WORKSPACE/rpmbuild/BUILDROOT/
 
 
 if [ $? -ne "0" ] ; then
