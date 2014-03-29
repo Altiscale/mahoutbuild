@@ -43468,7 +43468,7 @@ diff -uNar -x .git mahout/pom.xml mahout/pom.xml
              <reports>
 diff -uNar -x .git mahout/spark/pom.xml mahout/spark/pom.xml
 --- mahout/spark/pom.xml	1969-12-31 16:00:00.000000000 -0800
-+++ mahout/spark/pom.xml	2014-03-29 01:03:14.000000000 -0700
++++ mahout/spark/pom.xml	2014-03-29 08:51:20.000000000 -0700
 @@ -0,0 +1,272 @@
 +<?xml version="1.0" encoding="UTF-8"?>
 +
@@ -43691,13 +43691,13 @@ diff -uNar -x .git mahout/spark/pom.xml mahout/spark/pom.xml
 +    <dependency>
 +      <groupId>org.apache.spark</groupId>
 +      <artifactId>spark-core_2.10</artifactId>
-+      <version>0.9.0-incubating</version>
++      <version>0.9.1-incubating-SNAPSHOT</version>
 +    </dependency>
 +
 +    <dependency>
 +      <groupId>org.apache.spark</groupId>
 +      <artifactId>spark-bagel_2.10</artifactId>
-+      <version>0.9.0-incubating</version>
++      <version>0.9.1-incubating-SNAPSHOT</version>
 +    </dependency>
 +
 +    <dependency>
