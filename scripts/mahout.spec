@@ -19,6 +19,7 @@ BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%{service_name}
 # Requires: scala-2.10.3 >= 2.10.3
 # Apply all patches to fix CLASSPATH and java lib issues
 Patch1: %{_sourcedir}/patch.mahout
+Patch2: %{_sourcedir}/patch.mahout.2
 
 Url: http://www.altiscale.com/
 
@@ -32,6 +33,7 @@ echo "ok - copying files from %{_sourcedir} to folder  %{_builddir}/%{service_na
 cp -r %{_sourcedir}/%{service_name} %{_builddir}/
 
 %patch1 -p0
+%patch2 -p0
 
 %build
 echo "ANT_HOME=$ANT_HOME"
