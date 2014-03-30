@@ -26,7 +26,7 @@ fi
 export PATH=$PATH:$M2_HOME/bin:$SCALA_HOME/bin:$ANT_HOME/bin:$JAVA_HOME/bin
 
 # Define defau;t spark uid:gid and build version
-# WARNING: the MAHOUT_VERSION branch name does not align with the Git branch name branch-0.9
+# WARNING: the MAHOUT_VERSION branch name does not align with the Git branch name branch-0.8 / trunk
 if [ "x${MAHOUT_USER}" = "x" ] ; then
   export MAHOUT_USER=mahout
 fi
@@ -37,7 +37,7 @@ if [ "x${MAHOUT_UID}" = "x" ] ; then
   export MAHOUT_UID=23456
 fi
 if [ "x${MAHOUT_VERSION}" = "x" ] ; then
-  export MAHOUT_VERSION=trunk20140328
+  export MAHOUT_VERSION=trunk_20140328
 fi
 
 # Customize build OPTS for MVN

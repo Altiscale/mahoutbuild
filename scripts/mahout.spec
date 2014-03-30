@@ -61,9 +61,22 @@ echo "test installtion folder (aka buildroot) is RPM_BUILD_ROOT = %{buildroot}"
 echo "test install mahout dest = %{buildroot}/%{install_mahout_dest}"
 echo "test install mahout label pkg_name = %{pkg_name}"
 %{__mkdir} -p %{buildroot}%{install_mahout_dest}/
+%{__mkdir} -p %{buildroot}%{install_mahout_dest}/examples/target/
+%{__mkdir} -p %{buildroot}%{install_mahout_dest}/core/target/
+%{__mkdir} -p %{buildroot}%{install_mahout_dest}/math/target/
+%{__mkdir} -p %{buildroot}%{install_mahout_dest}/math-scala/target/
+%{__mkdir} -p %{buildroot}%{install_mahout_dest}/buildtools/target/
+%{__mkdir} -p %{buildroot}%{install_mahout_dest}/spark/target/
+%{__mkdir} -p %{buildroot}%{install_mahout_dest}/integration/target/
 # work folder is for runtime, this is a dummy placeholder here to set the right permission within RPMs
-cp -rp %{_builddir}/%{service_name}/examples %{buildroot}%{install_mahout_dest}/
 cp -rp %{_builddir}/%{service_name}/bin %{buildroot}%{install_mahout_dest}/
+cp -rp %{_builddir}/%{service_name}/examples/target/*.jar %{buildroot}%{install_mahout_dest}/examples/target/
+cp -rp %{_builddir}/%{service_name}/core/target/*.jar %{buildroot}%{install_mahout_dest}/core/target/
+cp -rp %{_builddir}/%{service_name}/math/target/*.jar %{buildroot}%{install_mahout_dest}/math/target/
+cp -rp %{_builddir}/%{service_name}/math-scala/target/*.jar %{buildroot}%{install_mahout_dest}/math-scala/target/
+cp -rp %{_builddir}/%{service_name}/buildtools/target/*.jar %{buildroot}%{install_mahout_dest}/buildtools/target/
+cp -rp %{_builddir}/%{service_name}/spark/target/*.jar %{buildroot}%{install_mahout_dest}/spark/target/
+cp -rp %{_builddir}/%{service_name}/integration/target/*.jar %{buildroot}%{install_mahout_dest}/integration/target/
 
 %clean
 echo "ok - cleaning up temporary files, deleting %{buildroot}%{install_mahout_dest}"
@@ -74,7 +87,7 @@ rm -rf %{buildroot}%{install_mahout_dest}
 %{install_mahout_dest}
 
 %changelog
-* Wed Mar 19 2014 Andrew Lee 20140319
-- Initial Creation of spec file for Spark 0.9.0
+* Wed Mar 19 2014 Andrew Lee 20140330
+- Initial Creation of spec file for Mahout-1.0-trunk-20140328
 
 
