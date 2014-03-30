@@ -37,7 +37,7 @@ if [ "x${MAHOUT_UID}" = "x" ] ; then
   export MAHOUT_UID=23456
 fi
 if [ "x${MAHOUT_VERSION}" = "x" ] ; then
-  export MAHOUT_VERSION=1.0-20140328-SNAPSHOT
+  export MAHOUT_VERSION=trunk20140328
 fi
 
 # Customize build OPTS for MVN
