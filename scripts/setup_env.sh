@@ -18,6 +18,10 @@ fi
 if [ "x${MAVEN_OPTS}" = "x" ] ; then
   export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=1024m"
 fi
+if [ "x${SCALA_HOME}" = "x" ] ; then
+  export SCALA_HOME=/opt/scala
+fi
+
 
 export PATH=$PATH:$M2_HOME/bin:$SCALA_HOME/bin:$ANT_HOME/bin:$JAVA_HOME/bin
 

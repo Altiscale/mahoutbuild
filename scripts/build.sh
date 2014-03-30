@@ -25,6 +25,23 @@ fi
 
 env | sort
 
+echo "checking if scala is installed on the system"
+# this chk can be smarter, however, the build script will re-download the scala libs again during build process
+# we can save some build time if we can just re-use the pre-installed scala
+chk_scala_rpm=$(rpm -qa *scala*)
+if [ "x${chk_scala_rpm}" = "x" -o ! -d "${SCALA_HOME}" ] ; then
+  echo "warn - SCALA_HOME may or may not be defined, however, $SCALA_HOME folder doesn't exist, re-downloading scala and install scala temporarily"
+  wget --quiet --output-document=scala.tgz  "http://www.scala-lang.org/files/archive/scala-2.10.3.tgz"
+  tar xvf scala.tgz
+  if [ -d $WORKSPACE/scala ] ; then
+    echo "deleting prev installed scala"
+    rm -rf $WORKSPACE/scala
+  fi
+  mv scala-* $WORKSPACE/scala
+  export SCALA_HOME=$WORKSPACE/scala
+  echo "scala downloaded completed, and put to $SCALA_HOME"
+fi
+
 #if [ ! -f "/usr/bin/rpmdev-setuptree" -o ! -f "/usr/bin/rpmbuild" ] ; then
 #  echo "fail - rpmdev-setuptree and rpmbuild in /usr/bin/ are both required to build RPMs"
 #  exit -8
