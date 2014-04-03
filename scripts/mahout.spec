@@ -46,7 +46,7 @@ cd %{_builddir}/%{service_name}/
 export HADOOP_VERSION=2.2.0
 
 mvn clean install -DskipTests -Dhadoop2 -Dhadoop2.version=${HADOOP_VERSION}
-# mvn test
+mvn test
 
 popd
 echo "Build Completed successfully!"
