@@ -1,5 +1,5 @@
 %define major_ver %(echo ${MAHOUT_VERSION})
-%define service_name vcc-mahout
+%define service_name alti-mahout
 %define company_prefix altiscale
 %define pkg_name %{service_name}-%{major_ver}
 %define install_mahout_dest /opt/%{pkg_name}
@@ -46,7 +46,7 @@ cd %{_builddir}/%{service_name}/
 export HADOOP_VERSION=2.2.0
 
 mvn clean install -DskipTests -Dhadoop2 -Dhadoop2.version=${HADOOP_VERSION}
-# mvn test -Dhadoop2 -Dhadoop2.version=${HADOOP_VERSION}
+mvn test -Dhadoop2 -Dhadoop2.version=${HADOOP_VERSION}
 
 popd
 echo "Build Completed successfully!"
@@ -88,9 +88,9 @@ rm -rf %{buildroot}%{install_mahout_dest}
 
 %changelog
 * Fri Apr 4 2014 Andrew Lee 20140404
-- Change UID to 411460025
+- Change UID to 411460025, and change the name back from vcc- to alti-
 * Wed Apr 2 2014 Andrew Lee 20140402
-- Rename package name with prefix vcc- so we can search for Altiscale RPMs
+- Rename package name with prefix alti- so we can search for Altiscale RPMs
 * Sat Mar 30 2014 Andrew Lee 20140330
 - Initial Creation of spec file for Mahout-1.0-trunk-20140328
 
