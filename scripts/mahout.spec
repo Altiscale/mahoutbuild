@@ -46,6 +46,8 @@ cd %{_builddir}/%{service_name}/
 export HADOOP_VERSION=2.2.0
 
 mvn clean install -DskipTests -Dhadoop2 -Dhadoop2.version=${HADOOP_VERSION}
+echo "warn - test is skipped due to spark binding error, all other test looks good"
+echo "warn - this error only happens when integrating with Spark, will need to look into it later"
 # mvn test -Dhadoop2 -Dhadoop2.version=${HADOOP_VERSION}
 
 popd
