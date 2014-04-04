@@ -1,17 +1,17 @@
 %define major_ver %(echo ${MAHOUT_VERSION})
-%define service_name mahout
+%define service_name vcc-mahout
 %define company_prefix altiscale
 %define pkg_name %{service_name}-%{major_ver}
 %define install_mahout_dest /opt/%{pkg_name}
 %define packager %(echo ${PKGER})
-%define mahout_user %(echo ${MAHOUT_USER})
-%define mahout_gid %(echo ${MAHOUT_GID})
-%define mahout_uid %(echo ${MAHOUT_UID})
+#%define mahout_user %(echo ${MAHOUT_USER})
+#%define mahout_gid %(echo ${MAHOUT_GID})
+#%define mahout_uid %(echo ${MAHOUT_UID})
 
 Name: %{service_name}
 Summary: %{pkg_name} RPM Installer
 Version: %{major_ver}
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: Copyright (C) 2014 Altiscale. All rights reserved.
 # Packager: %{packager}
 Source: %{_sourcedir}/%{service_name}
@@ -46,7 +46,7 @@ cd %{_builddir}/%{service_name}/
 export HADOOP_VERSION=2.2.0
 
 mvn clean install -DskipTests -Dhadoop2 -Dhadoop2.version=${HADOOP_VERSION}
-#mvn test
+# mvn test -Dhadoop2 -Dhadoop2.version=${HADOOP_VERSION}
 
 popd
 echo "Build Completed successfully!"
@@ -87,6 +87,8 @@ rm -rf %{buildroot}%{install_mahout_dest}
 %{install_mahout_dest}
 
 %changelog
+* Wed Apr 2 2014 Andrew Lee 20140402
+- Rename package name with prefix vcc- so we can search for Altiscale RPMs
 * Sat Mar 30 2014 Andrew Lee 20140330
 - Initial Creation of spec file for Mahout-1.0-trunk-20140328
 
