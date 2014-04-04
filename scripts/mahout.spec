@@ -11,7 +11,7 @@
 Name: %{service_name}
 Summary: %{pkg_name} RPM Installer
 Version: %{major_ver}
-Release: 3%{?dist}
+Release: 4%{?dist}
 License: Copyright (C) 2014 Altiscale. All rights reserved.
 # Packager: %{packager}
 Source: %{_sourcedir}/%{service_name}
