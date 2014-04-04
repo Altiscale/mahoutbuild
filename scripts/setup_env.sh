@@ -31,10 +31,10 @@ if [ "x${MAHOUT_USER}" = "x" ] ; then
   export MAHOUT_USER=mahout
 fi
 if [ "x${MAHOUT_GID}" = "x" ] ; then
-  export MAHOUT_GID=23456
+  export MAHOUT_GID=411460000
 fi
 if [ "x${MAHOUT_UID}" = "x" ] ; then
-  export MAHOUT_UID=23456
+  export MAHOUT_UID=411460043
 fi
 if [ "x${MAHOUT_VERSION}" = "x" ] ; then
   export MAHOUT_VERSION=trunk_20140328
