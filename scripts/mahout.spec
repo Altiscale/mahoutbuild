@@ -11,7 +11,7 @@
 Name: %{service_name}
 Summary: %{pkg_name} RPM Installer
 Version: %{major_ver}
-Release: 1%{?dist}
+Release: 2%{?dist}
 License: Copyright (C) 2014 Altiscale. All rights reserved.
 # Packager: %{packager}
 Source: %{_sourcedir}/%{service_name}
@@ -46,7 +46,7 @@ cd %{_builddir}/%{service_name}/
 export HADOOP_VERSION=2.2.0
 
 mvn clean install -DskipTests -Dhadoop2 -Dhadoop2.version=${HADOOP_VERSION}
-mvn test
+#mvn test
 
 popd
 echo "Build Completed successfully!"
@@ -87,7 +87,7 @@ rm -rf %{buildroot}%{install_mahout_dest}
 %{install_mahout_dest}
 
 %changelog
-* Wed Mar 19 2014 Andrew Lee 20140330
+* Sat Mar 30 2014 Andrew Lee 20140330
 - Initial Creation of spec file for Mahout-1.0-trunk-20140328
 
 
