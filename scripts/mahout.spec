@@ -11,7 +11,7 @@
 Name: %{service_name}
 Summary: %{pkg_name} RPM Installer
 Version: %{major_ver}
-Release: 4%{?dist}
+Release: 5%{?dist}
 License: Copyright (C) 2014 Altiscale. All rights reserved.
 # Packager: %{packager}
 Source: %{_sourcedir}/%{service_name}
@@ -87,6 +87,8 @@ rm -rf %{buildroot}%{install_mahout_dest}
 %{install_mahout_dest}
 
 %changelog
+* Fri Apr 4 2014 Andrew Lee 20140404
+- Change UID to 411460025
 * Wed Apr 2 2014 Andrew Lee 20140402
 - Rename package name with prefix vcc- so we can search for Altiscale RPMs
 * Sat Mar 30 2014 Andrew Lee 20140330
