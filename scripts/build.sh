@@ -82,6 +82,7 @@ rpmbuild -vv -ba $WORKSPACE/rpmbuild/SPECS/mahout.spec --define "_topdir $WORKSP
 
 if [ $? -ne "0" ] ; then
   echo "fail - RPM build failed"
+  exit -9
 fi
   
 echo "ok - build Completed successfully!"
