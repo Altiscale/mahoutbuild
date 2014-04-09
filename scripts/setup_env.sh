@@ -37,8 +37,16 @@ if [ "x${MAHOUT_UID}" = "x" ] ; then
   export MAHOUT_UID=411460025
 fi
 if [ "x${MAHOUT_VERSION}" = "x" ] ; then
-  export MAHOUT_VERSION=trunk_20140328
+  export MAHOUT_VERSION=trunk
 fi
+if [ "x${ALTISCALE_RELEASE}" = "x" ] ; then
+  export ALTISCALE_RELEASE=2.0.0
+else
+  export ALTISCALE_RELEASE
+fi
+
+BUILD_TIME=$(date +%Y%m%d%H%M)
+export BUILD_TIME
 
 # Customize build OPTS for MVN
 export MAVEN_OPTS="-Xmx2048m -XX:MaxPermSize=1024m"
